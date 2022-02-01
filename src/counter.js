@@ -10,35 +10,38 @@
 // remainder modulo .1 = remainder
 
 const counter = (amount) => {
-
+  const quarters = amount / .25;
+  const dimes = amount / .10;
+  const nickles = amount / .05;
+  const pennies = amount / .01;
   if(amount === 0) {
     return amount;
-  }else{
+  }else {
     if(amount > .26){
-      const quarters = amount / .25;
-      console.log(quarters);
-      return counter(amount - (amount * .25));
+      // quarters = amount / .25;
+      console.log("this is quarters" + quarters);
+      return counter(amount - (Math.floor(quarters) * .25));
       }
         
      else if ( amount > .11) {
-      const dimes = amount / .1;
-      console.log(dimes);
-      return counter(amount - (amount * .10));
+      // dimes = amount / .1;
+      console.log("this is dimes" + dimes);
+      return counter(amount - (Math.floor(dimes) * .10));
     } 
     else if (amount > .06){
-      const nickles = amount / .05;
-      console.log(nickles)
-      return counter(amount - (nickles * .05));
+      // nickles = amount / .05;
+      console.log("this is nickles" + nickles)
+      return counter(amount - (Math.floor(nickles) * .05));
       
     }
     else {
-      const pennies = amount / .01;
-      console.log(pennies);
-      return counter(amount - (pennies * .01));
+     } // pennies = amount / .01;
+      console.log("This is pennies" + pennies);
+      return `you have  ${Math.floor(quarters)},${Math.floor(dimes)},${Math.floor(nickles)},${Math.floor(pennies)}`
       
     } 
   }
- }
+ 
 
   
 
